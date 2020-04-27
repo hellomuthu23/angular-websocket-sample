@@ -1,0 +1,20 @@
+<h1>Angular Websocket-Socket.IO Client Demo</h1>
+
+<button (click)="connect()">Connect to server</button>
+<p>Make sure your node.js sample socket server is running</p>
+<ng-container *ngIf="socketConnected">
+  <div>
+    <div>Connection Status : {{ socketConnected }}</div>
+    <div>Live Socket Messages</div>
+    <textarea disable="true" rows="20">{{ incomingMessage }}</textarea>
+  </div>
+  <hr />
+  <div>
+    <h2>Ping Pong Message</h2>
+    <button (click)="ping(pingInput.value)">Ping :</button>
+    <input value="hello" #pingInput />
+    <div>
+      <label>Pong : {{ pongMessage }}</label>
+    </div>
+  </div>
+</ng-container>
